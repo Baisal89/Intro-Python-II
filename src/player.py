@@ -18,12 +18,13 @@ class Player:
             print("You cannot move in that direction")
     def print_inventory(self):
         print("You are holding: ")
-        for item in self.items:
+        for item in self.item:
             print(item.name)
-    def eat(self, foot_item):
+    def eat(self, food_item):
         if not isinstance(food_item, Food):
             print(f"You can not eat {food_item.name}")
         else:
-            print(f"You have eaten {foot_item.name}, your strength is now{self.strength}")
+            print(
+                f"You have eaten {food_item.name}, your strength is now{self.strength}")
             self.strength += food_item.calories
             self.items.remove(food_item)
